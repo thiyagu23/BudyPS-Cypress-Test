@@ -1,6 +1,6 @@
 import Login from "../../PageObjects/LoginPage";
 
-describe("Create an opportunity for new customer", () => {
+describe("Opportunity Editing and update", () => {
   beforeEach(() => {
     //Login
     cy.visit("login");
@@ -10,7 +10,7 @@ describe("Create an opportunity for new customer", () => {
     ln.clickSubmit();
   });
 
-  it("Create an opportunity for new customer test", () => {
+  it("Opportunity Editing and update and verifing", () => {
     // clicking sidebar
     cy.xpath(
       "//button[@class='ant-btn ant-btn-text ant-btn-icon-only hp-mobile-sidebar-button']"
