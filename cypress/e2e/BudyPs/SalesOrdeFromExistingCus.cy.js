@@ -1,7 +1,6 @@
 import Login from "../page objects/loginpage/Login.cy";
 
 describe("Create opportunity for existing customers", () => {
-
   it("should create", () => {
     cy.visit("https://pstest.Avaniko.com");
 
@@ -28,13 +27,13 @@ describe("Create opportunity for existing customers", () => {
 
     // get customer drop down list
 
-    cy.get('#basic_customerCode').click();;
+    cy.get("#basic_customerCode").click();
 
     // get customer
 
     cy.get(
- "div[title='C00006 - Acsen Tex Pvt Ltd.'] div[class='ant-select-item-option-content']"
-    ).click({force:true});;
+      "div[title='C00006 - Acsen Tex Pvt Ltd.'] div[class='ant-select-item-option-content']"
+    ).click({ force: true });
 
     // get valid until field
 
@@ -60,7 +59,9 @@ describe("Create opportunity for existing customers", () => {
 
     // select place
 
-      cy.get("div[title='Bihar'] div[class='ant-select-item-option-content']").click();;
+    cy.get(
+      "div[title='Bihar'] div[class='ant-select-item-option-content']"
+    ).click();
 
     // sales employee
 
@@ -74,7 +75,9 @@ describe("Create opportunity for existing customers", () => {
 
     // get item code field
 
-    cy.get('.ant-col-20 > .ant-row > .ant-col > .ant-form-item-control-input > .ant-form-item-control-input-content > .ant-select > .ant-select-selector > .ant-select-selection-item').click();
+    cy.get(
+      ".ant-col-20 > .ant-row > .ant-col > .ant-form-item-control-input > .ant-form-item-control-input-content > .ant-select > .ant-select-selector > .ant-select-selection-item"
+    ).click();
 
     // select item code
 
@@ -84,46 +87,57 @@ describe("Create opportunity for existing customers", () => {
 
     // enter price
 
-    cy.get("#price").click({force:true}).type("400");
+    cy.get("#price").click({ force: true }).type("400");
 
     // enter discount
 
-    cy.get('#discounts').click({force:true}).type("5");
+    cy.get("#discounts").click({ force: true }).type("5");
 
     // get tax tab
 
-    cy.get(':nth-child(7) > .ant-row > .ant-col > .ant-form-item-control-input > .ant-form-item-control-input-content > .ant-select > .ant-select-selector > .ant-select-selection-item').click({force:true});;
+    cy.get(
+      ":nth-child(7) > .ant-row > .ant-col > .ant-form-item-control-input > .ant-form-item-control-input-content > .ant-select > .ant-select-selector > .ant-select-selection-item"
+    ).click({ force: true });
 
     // select tax type
 
     cy.get(
-  "div[title='A-IGST18 - IGST 18%'] div[class='ant-select-item-option-content']"
+      "div[title='A-IGST18 - IGST 18%'] div[class='ant-select-item-option-content']"
     ).click();
 
     // get wharehouse tab
 
-    cy.get(':nth-child(8) > .ant-row > .ant-col > .ant-form-item-control-input > .ant-form-item-control-input-content > .ant-select > .ant-select-selector > .ant-select-selection-item').click({force:true});
+    cy.get(
+      ":nth-child(8) > .ant-row > .ant-col > .ant-form-item-control-input > .ant-form-item-control-input-content > .ant-select > .ant-select-selector > .ant-select-selection-item"
+    ).click({ force: true });
 
     // select warehouse
 
-     cy.get("div[title='Service - Chennai'] div[class='ant-select-item-option-content']").click({force:true});
+    cy.get(
+      "div[title='Service - Chennai'] div[class='ant-select-item-option-content']"
+    ).click({ force: true });
 
     // project field
-    cy.get(':nth-child(9) > .ant-row > .ant-col > .ant-form-item-control-input > .ant-form-item-control-input-content > .ant-select > .ant-select-selector > .ant-select-selection-item').click({force:true});
+    cy.get(
+      ":nth-child(9) > .ant-row > .ant-col > .ant-form-item-control-input > .ant-form-item-control-input-content > .ant-select > .ant-select-selector > .ant-select-selection-item"
+    ).click({ force: true });
 
     // select project
 
-    cy.xpath("//div[contains(text(),'AMC - DATA')]").click( );
-
+    cy.xpath("//div[contains(text(),'AMC - DATA')]").click();
 
     // add comments get field
-    cy.get('#rc-tabs-0-tab-1').click();
+    cy.get("#rc-tabs-0-tab-1").click();
 
     // enter comments
 
-    cy.get('#basic_comments').click().type("sales order for existing customers");
+    cy.get("#basic_comments")
+      .click()
+      .type("sales order for existing customers");
     // // click save quote button
 
-     cy.get("body > div:nth-child(1) > section:nth-child(1) > section:nth-child(2) > main:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > form:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > div:nth-child(6) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > button:nth-child(1) > span:nth-child(2)").click();
+    cy.get(
+      "body > div:nth-child(1) > section:nth-child(1) > section:nth-child(2) > main:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > form:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > div:nth-child(6) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > button:nth-child(1) > span:nth-child(2)"
+    ).click();
   });
 });
